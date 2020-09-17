@@ -1,0 +1,22 @@
+{
+  "name": "mercado-libre-backend",
+  "version": "1.0.0",
+  "description": "tp",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emiliano",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
+  }
+}
