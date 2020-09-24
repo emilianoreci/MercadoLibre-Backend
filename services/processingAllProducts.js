@@ -14,11 +14,9 @@ const processingAllProducts = (dataWithoutProcessing) => {
     container["id"] = item.id;
     container["title"] = item.title;
     container["price"] = {
-      price: {
-        currency: item.currency_id,
-        amount: item.price,
-        decimals: null,
-      },
+      currency: item.currency_id,
+      amount: item.price,
+      decimals: null,
     };
     container["picture"] = item.thumbnail;
     container["condition"] = item.condition;
