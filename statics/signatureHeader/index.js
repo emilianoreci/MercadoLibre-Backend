@@ -1,8 +1,8 @@
-const headerObject = {
+const signatureHeader = {
   author: {
     name: "Emiliano",
     lastname: "Reci",
   },
 };
 
-module.exports = headerObject;
+module.exports = signatureHeader;

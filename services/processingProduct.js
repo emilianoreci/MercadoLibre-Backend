@@ -1,8 +1,8 @@
 //  @ Own
-const headerObject = require("../statics/headerObject");
+const signatureHeader = require("../statics/signatureHeader");
 
-const processingProduct = (product) => {
-  let data = { ...headerObject };
+const processingProduct = (product = {}) => {
+  let data = { ...signatureHeader };
   data.item = {
     id: product.id,
     title: product.title,

@@ -8,7 +8,6 @@ const cors = require("cors");
 
 // CORS
 app.use(cors());
-
 app.use(express.json());
 app.use(api);
 
@@ -17,6 +16,3 @@ app.listen(process.env.PORT, () => {
     `server run on port ${process.env.PORT}, mode: ${process.env.NODE_ENV}`
   );
 });
-
-// CORS
-//app.use(cors());

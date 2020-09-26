@@ -42,6 +42,9 @@ mongodb+srv://taskapp:targa911@cluster0-gwxkm.mongodb.net/task-manager-api?
  **************/
 En el package.json se debe agregar el script para heroku:
     "start": "node src/app.js"
+
+    asi estaba para heroku:
+    "start": "node index.js"
 Solo debe figurar el script start nada mas!!! 
 Lo siguiente debe estar comentado.
     "dev": "nodemon --watch src src/app.js --watch ./templates -e js,hbs --watch ./public/css -e css,hbs,js"

@@ -1,7 +1,12 @@
 //  @ Own
-const headerObject = require("../statics/headerObject");
+const signatureHeader = require("../statics/signatureHeader");
 
-const processingAllProducts = (dataWithoutProcessing) => {
+const processingAllProducts = (dataWithoutProcessing = {}) => {
+  let filtersForBreadcrum = [];
+  if (dataWithoutProcessing.filters.length > 0)
+    filtersForBreadcrum =
+      dataWithoutProcessing.filters[0].values[0].path_from_root;
+
   const products = dataWithoutProcessing.results;
   const size = 4;
   let items = products.slice(0, size);
@@ -10,7 +15,6 @@ const processingAllProducts = (dataWithoutProcessing) => {
   const productsList = items.map((item) => {
     id_list_categories = [...id_list_categories, item.category_id];
     const container = {};
-
     container["id"] = item.id;
     container["title"] = item.title;
     container["price"] = {
@@ -24,11 +28,12 @@ const processingAllProducts = (dataWithoutProcessing) => {
     return container;
   });
 
-  // no permite duplicidad de ids.
+  // no permite duplicidad de ids de categorias.
   let id_category = [...new Set(id_list_categories)];
-  let data = { ...headerObject };
+  let data = { ...signatureHeader };
   data.categories = id_category;
   data.items = productsList;
+  data.filters = filtersForBreadcrum;
 
   return data;
 };
